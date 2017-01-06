@@ -4,11 +4,11 @@ The Public Procurement and Disposal Act established the PPOA. It dictates the ru
 
 ## Scraping with Python
 ======
-This a Python 2-only repo. Use `python contract_awards.py` in the command line. Trivial to do if you have a Linux variant. Otherwise, if you are a Windows 10 user, don't despair, look at [Bash on Ubuntu on Windows]("https://msdn.microsoft.com/en-us/commandline/wsl/install_guide")
+This a Python 2-only repo. Use `python contract_awards.py` in the command line. Trivial to do if you have a Linux variant. Otherwise, if you are a Windows 10 user, don't despair, see [Bash on Ubuntu on Windows]("https://msdn.microsoft.com/en-us/commandline/wsl/install_guide")
 
 ### Python libraries needed to be installed via pip
 
-..+ Beutiful Soup
++ Beutiful Soup
 
 ## Scraping directly through the command line
 ======
@@ -16,10 +16,10 @@ After ensuring `contract_awards_shell_script` is executable by changing permissi
 
 ### Python libraries needed for the command line version
 Please see [Jeroen Janssen's Data Science at the Command Line](https://github.com/jeroenjanssens/data-science-at-the-command-line). This repo specifically makes use of:
-..+ scrape
-..+ jq
-..+ xml2json
-..+ json2csv
++ scrape
++ jq
++ xml2json
++ json2csv
 
 Also, you may need to install `ssed`. On Ubuntu, `sudo apt-get update` and `sudo apt-get install ssed` will do the trick. I may have well as used `sed`, but `ssed` is preferable since I'm partial to PCRE regular expressions.
 
