@@ -1,0 +1,19 @@
+ #!/bin/bash                                                                                     
+ export PATH=$PATH:pwd
+   
+   COUNTER="1"
+    
+    while [ $COUNTER -lt 129 ]; do
+     
+     echo  "READ: $COUNTER";
+      curl -sL "http://supplier.treasury.go.ke/site/tenders.go/index.php/public/contracts/page:$COUNTER" |
+       scrape -be 'table.table-striped>tr:not(:first-child)' |
+        ssed -R 's/<a.*?>//' | ssed -R 's/<\/a.*?>//'| xml2json |
+         jq -c '.html.body.tr[] | {proc_entity: .td[0][], description: .td[2][], contractor: .td[3][], amount: .td[5][]}'      |
+          json2csv -p -k proc_entity,description,contractor,amount >> contracts.csv
+
+           echo "End of web scrape";
+
+            COUNTER=$[$COUNTER + 1]
+             done
+              echo "Exiting..."
